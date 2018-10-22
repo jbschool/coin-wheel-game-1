@@ -24,7 +24,15 @@
   
 
 ### Comments from Mark
-* asdf
+* Sprint timeframes may need to be adjusted to enhance the effectiveness of the work in the sprint being done.
+  Also, we may have over shot the amount that can be put into a work load per sprint.
+* Make it a point to get some face-to-face feedback from Dr. Paul after each sprint is over.
+* I may have halted some progress due to not being on slack as much as my teammates. I need to work
+  on this for future sprints. Also, I may need to be outspoken when participating in group discussions.
+* For the next sprint I would suggest:
+	* Better involvement on my side in group discussions
+	* Structuring sprint work loads appropriately.
+	* More real time communication with Dr. Paul 
 
 ### Comments from Jackie
 * With the unreliability of class time to work in our groups, we need to focus on organization of 
