@@ -14,16 +14,14 @@ public class UtilityTest {
      */
     @Test
     public void getCharCountTest() {
-
-        Utility u = new Utility();
         CharSequence testSeq = "HTHHHTHT";
 
         char charToCount = 'H';
-        int getCharTest = u.getCharCount(testSeq, charToCount);
+        int getCharTest = Utility.getCharCount(testSeq, charToCount);
         assertEquals(getCharTest, 5);
 
         char charToCount2 = 'T';
-        int getCharTest2 = u.getCharCount(testSeq, charToCount2);
+        int getCharTest2 = Utility.getCharCount(testSeq, charToCount2);
         assertEquals(getCharTest2, 3);
 
     }
@@ -34,20 +32,18 @@ public class UtilityTest {
 
     @Test
     public void repeatCharsTest() {
-
-        Utility u = new Utility();
         char c = 'H';
         int times = 10;
 
         String response = "HHHHHHHHHH";
-        String repeatCharsTest = u.repeatChars(c, times);
+        String repeatCharsTest = Utility.repeatChars(c, times);
         assertEquals(repeatCharsTest, response);
 
         char c2 = 'T';
         int times2 = 4;
 
         String response2 = "TTTT";
-        String repeatCharsTest2 = u.repeatChars(c2, times2);
+        String repeatCharsTest2 = Utility.repeatChars(c2, times2);
         assertEquals(repeatCharsTest2, response2);
     }
 

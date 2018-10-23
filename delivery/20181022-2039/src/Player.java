@@ -66,6 +66,7 @@ public class Player implements StrategicPlayer {
 
         return resp.toString();
     }
+
      /**
      * Provides the request pattern for the current turn in a
      * general game where no strategy is implemented.
@@ -76,12 +77,6 @@ public class Player implements StrategicPlayer {
      * @return a proper reveal-pattern consisting of '-' and '?' with
      * exactly the number of '?' as permitted by reveals-per-spin during the no strategy
      * general game play
-     */
-
-    /**
-     * Requests to reveal the first n allowed consecutive positions.
-     *
-     * @return A string with the first n characters set to ?
      */
     protected CharSequence getSlotsToRevealGeneral() {
         int numReveals = Math.min(_revealsPerSpin, _coinsPerWheel);
@@ -99,6 +94,7 @@ public class Player implements StrategicPlayer {
 
         return sb.toString();
     }
+
      /**
      * Provides the request pattern for the current turn in a 4 coin
      * 2 reveal strategy implementation.
@@ -109,14 +105,6 @@ public class Player implements StrategicPlayer {
      * @return a proper reveal-pattern consisting of '-' and '?' with
      * exactly the number of '?' as permitted by reveals-per-spin during the 4 coin
      * 2 reveal strategy implementation.
-     */
-
-    /**
-     * Follows the 4-2 game player play book. Asks consecutively for
-     * predetermined revlead patterns that guarantee a win by the 5th turn.
-     *
-     * @param turnNum
-     * @return
      */
     protected CharSequence getSlotsToRevealFourTwo(int turnNum) {
         String resp;
@@ -150,6 +138,7 @@ public class Player implements StrategicPlayer {
 
         return resp.toString();
     }
+
     /**
      * Provides the coin-state set pattern for the current turn
      * in the general game where no strategy is implemented.
