@@ -94,7 +94,7 @@ public class Player implements StrategicPlayer {
 
         return sb.toString();
     }
-    
+
      /**
      * Provides the request pattern for the current turn in a 4 coin
      * 2 reveal strategy implementation.
