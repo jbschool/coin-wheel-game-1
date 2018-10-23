@@ -6,7 +6,7 @@
 	</description>
 
    <tstamp>
-       <format property="time.stamp" pattern="yyyyMMdd"/>
+       <format property="time.stamp" pattern="yyyyMMdd-HHmm"/>
    </tstamp>
 
    <property name = "deliveryParentDir" value = "delivery"/>
@@ -16,37 +16,30 @@
    <property name = "src" value = "${projectFolder}/src"/>
    <property name = "test" value = "${projectFolder}/test"/>
    <property name = "lib" value = "${projectFolder}/lib"/>
-   <property name = "buildxml" value = "${projectFolder}/build.xml"/>
-   <property name = "build" value = "${deliveryDir}/build"/>
+   <property name = "buildxml" value = "clientBuildFiles/buildForClient.xml"/>
+   <!-- <property name = "build" value = "${deliveryDir}/build"/> -->
    
-   <path id="classpath">
-     <fileset dir="${lib}" includes="**/*.jar"/>
-   </path>
 
-   <!-- BEGIN TARGETS -->
-   <target name="makeDelivery">
-       <!-- DELETE FOLDER IF IT EXISTS THEN MAKE A CLEAN FOLDER -->
-       <delete dir="${deliveryDir}" failonerror="false"/>
-       <mkdir dir="${deliveryDir}"/>
+   <!-- Make a delivery -->
+   <target name="makeDelivery" description="copy everything for a delivery">
+     <!-- DELETE FOLDER IF IT EXISTS THEN MAKE A CLEAN FOLDER -->
+     <delete dir="${deliveryDir}" failonerror="false"/>
+     <mkdir dir="${deliveryDir}"/>
 
-       <!-- COPY SRC, TEST, AND LIB DIRECTORIES -->
-       <copy todir="${deliveryDir}/src">
-           <fileset dir="${src}"/>
-       </copy>
-       <copy todir="${deliveryDir}/test">
-           <fileset dir="${test}"/>
-       </copy>
-       <copy todir="${deliveryDir}/lib">
-           <fileset dir="${lib}"/>
-       </copy>
-	   <copy file = "${buildxml}" todir="${deliveryDir}"/>
-	   <!-- Create the build directory structure -->
-	   <mkdir dir="${build}"/>
-	   <javac srcdir="${src}" destdir="${build}" classpathref="classpath"
-           debug="on" includeantruntime="false" encoding="cp1252"
-           memoryinitialsize="1024m" memorymaximumsize="1024m" fork="yes">
-           <compilerarg value="-Xlint"/>
-        </javac>
+     <!-- COPY SRC, TEST, LIB DIRECTORIES; ADD CLIENT build.xml -->
+     <copy todir="${deliveryDir}/src">
+         <fileset dir="${src}"/>
+     </copy>
+     
+     <copy todir="${deliveryDir}/test">
+         <fileset dir="${test}"/>
+     </copy>
+     
+     <copy todir="${deliveryDir}/lib">
+         <fileset dir="${lib}"/>
+     </copy>
+
+	   <copy file = "${buildxml}" tofile="${deliveryDir}/build.xml"/>
    </target>
 
 </project>
